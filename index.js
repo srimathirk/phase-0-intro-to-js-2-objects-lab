@@ -9,10 +9,15 @@ function destructivelyUpdateEmployeeWithKeyAndValue(employee,key,value){
     return employee;
 }
 function deleteFromEmployeeByKey(employee,key){
-    const newEmployee ={employee};
+const newEmployee = {...employee};
+delete newEmployee[key];
+return newEmployee; 
+}
+    /*const newEmployee ={employee};
     employee.name =`Sam`;
 return newEmployee;
-}
+}*/
+console.log(deleteFromEmployeeByKey(employee,key));
 function destructivelyDeleteFromEmployeeByKey(employee,key){
     delete employee["name"];
     return employee;
